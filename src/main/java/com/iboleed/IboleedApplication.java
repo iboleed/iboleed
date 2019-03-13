@@ -1,5 +1,6 @@
 package com.iboleed;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,10 @@ import java.util.List;
 @RequestMapping("/iboleed")
 public class IboleedApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(IboleedApplication.class, args);
-	}
+	public static void main(String[] args) { SpringApplication.run(IboleedApplication.class, args); }
+
+	@Autowired
+	private final MemberRepository repository;
 
 	//Template
 	private List<Member> memberListt = Arrays.asList(
