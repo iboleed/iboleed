@@ -33,8 +33,13 @@ dependencies {
 //	implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry'
 	implementation 'org.springframework.cloud:spring-cloud-cloudfoundry-discovery'
 	implementation 'org.springframework.cloud:spring-cloud-starter'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
