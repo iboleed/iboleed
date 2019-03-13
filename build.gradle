@@ -37,10 +37,14 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	//1
+	testCompile 'io.rest-assured:rest-assured:3.3.0'
+	//2
 	runtimeOnly 'com.h2database:h2'
+	//3
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
 }
 
 dependencyManagement {
