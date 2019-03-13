@@ -23,6 +23,6 @@ public class SpringBootJPAIntegrationTest {
                 .findOne(genericEntity.getId());
 
         assertNotNull(foundEntity);
-        assertEquals(genericEntity.getValue(), foundEntity.getValue());
+        assertEquals(genericEntity.getName(), foundEntity.getName());
     }
 }

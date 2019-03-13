@@ -18,5 +18,6 @@ public class GenericEntity {
     @NotNull
     private String name;
 
+
     //standard constructors, getters, setters
 }

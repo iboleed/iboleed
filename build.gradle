@@ -1,6 +1,8 @@
 plugins {
 	id 'org.springframework.boot' version '2.1.3.RELEASE'
 	id 'java'
+	id 'io.franzbecker.gradle-lombok' version '2.1'
+
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -43,4 +45,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
 
+}
+
+lombok { // optional: values below are the defaults
+	version = "1.18.4"
+	sha256 = "39f3922deb679b1852af519eb227157ef2dd0a21eec3542c8ce1b45f2df39742"
 }
