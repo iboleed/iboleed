@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,8 +22,14 @@ public class IboleedApplication {
 
 	//Template
 	private List<Member> memberListt = Arrays.asList(
-			new Member(1L, "Member", "Tim Schimandle"),
-			new Member(2L, "Member2", "Slavisa")
+			new Member("123", "Member", "Tim Schimandle", "qwerty"),
+			new Member("456", "Member2", "Slavisa", "asdf")
+	);
+
+	//Template
+	private List<FitnessData> fitnessData = Arrays.asList(
+			new FitnessData("999", "123", Instant.now(), 123),
+			new FitnessData("888", "456", Instant.now(), 34)
 	);
 
 	@GetMapping("")

@@ -15,9 +15,5 @@ public class GenericEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
-    private String name;
-
-
     //standard constructors, getters, setters
 }
