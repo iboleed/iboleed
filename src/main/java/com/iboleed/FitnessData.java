@@ -1,13 +1,16 @@
 package com.iboleed;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.Instant;
 
 @Entity
 public class FitnessData {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String memberId;
     private Instant date;
     private Integer steps;
@@ -15,18 +18,18 @@ public class FitnessData {
     public FitnessData() {
     }
 
-    public FitnessData(String id, String memberId, Instant date, Integer steps) {
+    public FitnessData(Long id, String memberId, Instant date, Integer steps) {
         this.id = id;
         this.memberId = memberId;
         this.date = date;
         this.steps = steps;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

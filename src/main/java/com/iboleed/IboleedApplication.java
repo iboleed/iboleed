@@ -30,8 +30,8 @@ public class IboleedApplication {
 
 	//Template
 	private List<FitnessData> fitnessData = Arrays.asList(
-			new FitnessData("999", "123", Instant.now(), 123),
-			new FitnessData("888", "456", Instant.now(), 34)
+			new FitnessData(999L, "123", Instant.now(), 123),
+			new FitnessData(888L, "456", Instant.now(), 34)
 	);
 
 	@GetMapping("")
