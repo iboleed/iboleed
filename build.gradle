@@ -26,17 +26,10 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-cloud-connectors'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-circuit-breaker'
-//	implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-config-client'
-//	implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry'
-	implementation 'org.springframework.cloud:spring-cloud-cloudfoundry-discovery'
-	implementation 'org.springframework.cloud:spring-cloud-starter'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-
 
 	//1
 	testCompile 'io.rest-assured:rest-assured:3.3.0'
@@ -49,11 +42,4 @@ dependencies {
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
 
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:${springCloudServicesVersion}"
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
 }

@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@EnableDiscoveryClient
-//@EnableConfigServer
 //@RestController
 //@RequestMapping("/books")
 public class IboleedApplication {
@@ -14,10 +12,6 @@ public class IboleedApplication {
 		SpringApplication.run(IboleedApplication.class, args);
 	}
 
-//	public static void main(String[] args) {
-//		SpringApplication.run(BookServiceApplication.class, args);
-//	}
-//
 //	private List<Book> bookList = Arrays.asList(
 //			new Book(1L, "Baeldung goes to the market", "Tim Schimandle"),
 //			new Book(2L, "Baeldung goes to the park", "Slavisa")
