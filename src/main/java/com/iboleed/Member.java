@@ -3,6 +3,7 @@ package com.iboleed;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
@@ -16,4 +17,8 @@ public class Member extends GeneralEntity {
     private String lastName;
     private String password;
     private String name;
+
+    @NotNull
+    @OneToOne(cascade = CascadeType.ALL)
+    private FitnessData fitnessData;
 }

@@ -1,5 +1,6 @@
 package com.iboleed;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,23 +17,26 @@ import java.util.List;
 @RequestMapping("/iboleed")
 public class IboleedApplication {
 
+	@Autowired
+	private IncentivesService incentivesService;
+
 	public static void main(String[] args) { SpringApplication.run(IboleedApplication.class, args); }
 
-	//Template
+//	//Template
 	private List<Member> memberListt = Arrays.asList(
-			new Member( "Member", "Tim Schimandle", "qwerty",""),
-			new Member( "Member2", "Slavisa", "asdf","")
+			new Member( "Member", "Tim Schimandle", "qwerty","", new FitnessData()),
+			new Member( "Member2", "Slavisa", "asdf","", new FitnessData())
 	);
 
 	//Template
 	private List<FitnessData> fitnessData = Arrays.asList(
 			new FitnessData.FitnessDataBuilder()
-					.memberId("22")
+//					.memberId("22")
 					.date(Instant.now())
 					.steps(123)
 					.build(),
 			new FitnessData.FitnessDataBuilder()
-					.memberId("46")
+//					.memberId("46")
 					.date(Instant.now())
 					.steps(34)
 					.build()
@@ -42,6 +46,11 @@ public class IboleedApplication {
 	@GetMapping("")
 	public List<Member> findAllMem() {
 		return memberListt;
+	}
+
+	@GetMapping("/totalincentives")
+	public Integer findTotalIncentives() {
+		return incentivesService.getTotal(22l);
 	}
 
 	@GetMapping("/{memId}")

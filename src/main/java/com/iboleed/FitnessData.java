@@ -16,7 +16,6 @@ import java.time.Instant;
 @Builder
 public class FitnessData  extends GeneralEntity{
 
-    private String memberId;
     private Instant date;
     private Integer steps;
 
