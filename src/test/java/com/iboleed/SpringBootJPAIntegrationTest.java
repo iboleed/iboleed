@@ -27,9 +27,8 @@ public class SpringBootJPAIntegrationTest {
         // given
         Member alex = new Member("ddd","gg", "-90", "nnnn");
 
-        entityManager.persist(alex);
-
-        entityManager.flush();
+//        entityManager.persist(alex);
+//        entityManager.flush();
 
         // when
         memberRepository.save(alex);
