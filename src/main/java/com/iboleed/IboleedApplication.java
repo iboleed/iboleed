@@ -1,6 +1,5 @@
 package com.iboleed;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -28,8 +26,17 @@ public class IboleedApplication {
 
 	//Template
 	private List<FitnessData> fitnessData = Arrays.asList(
-			new FitnessData(999L, "123", Instant.now(), 123),
-			new FitnessData(888L, "456", Instant.now(), 34)
+			new FitnessData.FitnessDataBuilder()
+					.memberId("22")
+					.date(Instant.now())
+					.steps(123)
+					.build(),
+			new FitnessData.FitnessDataBuilder()
+					.memberId("46")
+					.date(Instant.now())
+					.steps(34)
+					.build()
+
 	);
 
 	@GetMapping("")

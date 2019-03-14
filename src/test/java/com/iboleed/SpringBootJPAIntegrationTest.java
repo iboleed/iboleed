@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
 @DataJpaTest
 public class SpringBootJPAIntegrationTest {
 
-    @Autowired
-    private TestEntityManager entityManager;
+//    @Autowired
+//    private TestEntityManager entityManager;
 
     @Autowired
     private MemberRepository memberRepository;
@@ -37,9 +37,6 @@ public class SpringBootJPAIntegrationTest {
         // then
         assertNotNull(found);
         assertEquals(found.get(0).getFirstName(),"ddd");
-
-        //        assertThat(found.getFirstName())
-//                .isEqualTo(alex.getFirstName());
     }
 
 }
