@@ -8,6 +8,7 @@ import java.time.Instant;
 
 @Entity
 public class FitnessData {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
