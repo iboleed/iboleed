@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -23,21 +25,19 @@ public class SpringBootJPAIntegrationTest {
     @Test
     public void whenFindByName_thenReturnEmployee() {
         // given
-        Member alex = new Member("1","ddd","gg", "-90","");
-        entityManager.merge(alex);
+        Member alex = new Member("ddd","gg", "-90", "nnnn");
+
         entityManager.persist(alex);
 
         entityManager.flush();
 
         // when
-        Member found = memberRepository.findByName(alex.getFirstName());
-
-//        memberRepository.save(new Member());
-//        memberRepository.findByName(found.getLastName());
+        memberRepository.save(alex);
+        List<Member> found = memberRepository.findByLastName(alex.getLastName());
 
         // then
         assertNotNull(found);
-        assertEquals(found.getId(),"1");
+        assertEquals(found.get(0).getFirstName(),"ddd");
 
         //        assertThat(found.getFirstName())
 //                .isEqualTo(alex.getFirstName());

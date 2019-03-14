@@ -20,11 +20,11 @@ public class IboleedApplication {
 
 	public static void main(String[] args) { SpringApplication.run(IboleedApplication.class, args); }
 
-	//Template
-	private List<Member> memberListt = Arrays.asList(
-			new Member("123", "Member", "Tim Schimandle", "qwerty",""),
-			new Member("456", "Member2", "Slavisa", "asdf","")
-	);
+//	//Template
+//	private List<Member> memberListt = Arrays.asList(
+//			new Member( "Member", "Tim Schimandle", "qwerty",""),
+//			new Member( "Member2", "Slavisa", "asdf","")
+//	);
 
 	//Template
 	private List<FitnessData> fitnessData = Arrays.asList(
@@ -32,15 +32,15 @@ public class IboleedApplication {
 			new FitnessData(888L, "456", Instant.now(), 34)
 	);
 
-	@GetMapping("")
-	public List<Member> findAllMem() {
-		return memberListt;
-	}
-
-	@GetMapping("/{memId}")
-	public Member findMem(@PathVariable Long bookId) {
-		return memberListt.stream().filter(b -> b.getId().equals(bookId)).findFirst().orElse(null);
-	}
+//	@GetMapping("")
+//	public List<Member> findAllMem() {
+//		return memberListt;
+//	}
+//
+//	@GetMapping("/{memId}")
+//	public Member findMem(@PathVariable Long bookId) {
+//		return memberListt.stream().filter(b -> b.getFirstName().equals(bookId)).findFirst().orElse(null);
+//	}
 
 }
 
