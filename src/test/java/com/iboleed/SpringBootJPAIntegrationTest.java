@@ -14,18 +14,19 @@ import static org.junit.Assert.*;
 @DataJpaTest
 public class SpringBootJPAIntegrationTest {
 
-
     @Autowired
     private TestEntityManager entityManager;
 
-
-    MemberRepository memberRepository;
+    @Autowired
+    private MemberRepository memberRepository;
 
     @Test
     public void whenFindByName_thenReturnEmployee() {
         // given
-        Member alex = new Member("asa","ddd","gg", "-90");
+        Member alex = new Member("1","ddd","gg", "-90","");
+        entityManager.merge(alex);
         entityManager.persist(alex);
+
         entityManager.flush();
 
         // when
