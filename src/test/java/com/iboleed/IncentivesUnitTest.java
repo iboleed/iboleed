@@ -20,6 +20,7 @@ public class IncentivesUnitTest {
     public void before (){
         MemberRepository memberRepository = mock(MemberRepository.class);
         incentivesService = new IncentivesService(memberRepository);
+//        incentivesService.setMemberRepository(memberRepository);
 
 //        doReturn(Optional.of(mb)).when(memberRepository).findById(22l);
         when(memberRepository.findById(22l)).thenReturn(Optional.of(mb));

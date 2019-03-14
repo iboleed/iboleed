@@ -54,11 +54,6 @@ public class SpringBootJPAIntegrationTest {
     public void shouldShowTotalIncentives(){
         when().request("GET", "/iboleed/totalincentives/Slavisa").then().statusCode(200);
     }
-
-
-
-
-
 ///
     @Test
     public void shouldViewFitnessData(){

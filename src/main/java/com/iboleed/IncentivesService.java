@@ -12,12 +12,21 @@ import java.util.Optional;
 @Service
 public class IncentivesService {
 
-    //@Autowired
+//    public void setMemberRepository(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+//    }
+
+//    @Autowired
     MemberRepository memberRepository;
 
 
     public Integer getTotal(Long memberId) {
          return calcSum(memberRepository.findById(memberId).get().getFitnessData().getDate());
+
+    }
+
+    public Integer getTotal(String lastname) {
+         return calcSum(memberRepository.findByLastName(lastname).get(0).getFitnessData().getDate());
 
     }
 
