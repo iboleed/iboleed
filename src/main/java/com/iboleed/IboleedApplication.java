@@ -50,7 +50,7 @@ public class IboleedApplication {
 
 	@GetMapping("/totalincentives")
 	public Integer findTotalIncentives() {
-		return incentivesService.getTotal(22l);
+		return incentivesService.getTotal(1l);
 	}
 
 	@GetMapping("/{memId}")

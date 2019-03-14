@@ -31,8 +31,8 @@ public class SpringBootJPAIntegrationTest {
     public void setup() {
         RestAssured.baseURI = "http://localhost";
         RestAssured.port = 8081;
-        Member alex = new Member("ddd","gg", "-90", "nnnn", new FitnessData());
-        Member alex2 = new Member("","gg", "-90", "nnnn", new FitnessData());
+        Member alex = new Member("Tim","Schimandle", "-90", "nnnn", new FitnessData());
+        Member alex2 = new Member("John","Slavisa", "-90", "nnnn", new FitnessData());
         memberRepository.save(alex);
         memberRepository.save(alex2);
     }
@@ -52,7 +52,7 @@ public class SpringBootJPAIntegrationTest {
 ///
     @Test
     public void shouldShowTotalIncentives(){
-        when().request("GET", "/iboleed/totalincentives").then().statusCode(200);
+        when().request("GET", "/iboleed/totalincentives/Slavisa").then().statusCode(200);
     }
 
 
